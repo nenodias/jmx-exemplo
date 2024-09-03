@@ -1,0 +1,22 @@
+services:
+  client:
+    image: eclipse-temurin:21
+    command: java -jar /opt/app/app.jar
+    ports:
+      - 8080:8080
+    volumes:
+      - ./config/app:/opt/app
+  admin:
+    image: slydeveloper/spring-boot-admin
+    environment:
+      - SPRING_BOOT_ADMIN_TITLE=Custom Spring Boot Admin title
+    volumes:
+      - ./config/application-docker.properties:/opt/spring-boot-admin-docker/application-docker.properties
+    ports:
+      - 1111:1111
+    healthcheck:
+      test: "curl -sS http://localhost:1111/health"
+      interval: 1s
+      timeout: 60s
+      retries: 120
+    container_name: spring_boot_admin_docker

@@ -1,0 +1,38 @@
+spring:
+  info:
+    version: ${version}
+    description: "JMX Example"
+  application:
+    name: JMXExample
+  jmx:
+    enabled: true
+  boot:
+    admin:
+      client:
+        url: http://admin:1111
+        instance:
+          name: ${spring.application.name}
+          prefer-ip: true
+          metadata:
+            user.name: user
+            user.password: password
+        auto-registration: true
+        enabled: true
+        jmx:
+          enabled: true
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+    jolokia:
+      enabled: true
+      config:
+        debug: true
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: health,info,env,metrics,jolokia,loggers,jmx

@@ -29,7 +29,6 @@ This project is designed to be run using Docker and Docker Compose. It includes 
 
 3. **Use the sdk env:**
 
-
     ```sh
     sdk env
     ```

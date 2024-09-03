@@ -8,6 +8,7 @@ This project is designed to be run using Docker and Docker Compose. It includes 
 
 - Docker
 - Docker Compose
+- Sdkman
 
 ## Instructions
 
@@ -18,25 +19,40 @@ This project is designed to be run using Docker and Docker Compose. It includes 
     cd project
     ```
 
-2. **Build the project using gradle:**
+2. **Install the sdk with sdkman:**
+
+    https://sdkman.io/
+
+    ```sh
+    sdk env install
+    ```
+
+3. **Use the sdk env:**
+
+
+    ```sh
+    sdk env
+    ```
+
+4. **Build the project using gradle:**
 
     ```sh
     ./gradlew build
     ```
 
-3. **Move the jar into config/app folder:**
+5. **Move the jar into config/app folder:**
 
     ```sh
     mv ./build/libs/JMXExample-0.0.1-SNAPSHOT.jar config/app/app.jar
 
     ```
-4. **Run the application:**
+6. **Run the application:**
 
     ```sh
     docker-compose up
     ```
 
-4. **Access the spring-boot-admin:**
+7. **Access the spring-boot-admin:**
 
     Open your web browser and navigate to `http://localhost:1111`.
 

@@ -48,7 +48,7 @@ This project is designed to be run using Docker and Docker Compose. It includes 
 6. **Run the application:**
 
     ```sh
-    docker-compose up
+    docker compose up
     ```
 
 7. **Access the spring-boot-admin:**

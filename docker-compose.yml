@@ -6,6 +6,8 @@ services:
       - 8080:8080
     volumes:
       - ./config/app:/opt/app
+    container_name: spring_boot_admin_client_docker
+    network_mode: bridge
   admin:
     image: slydeveloper/spring-boot-admin
     environment:
@@ -19,4 +21,5 @@ services:
       interval: 1s
       timeout: 60s
       retries: 120
-    container_name: spring_boot_admin_docker
+    container_name: spring_boot_admin_server_docker
+    network_mode: bridge
